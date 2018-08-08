@@ -21,3 +21,4 @@ Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/bet','BetController@bet');
 Route::get('/admin','AdminController@modify_settings');
 Route::post('/admin','TeamsController@add');
+Route::get('/teams','TeamsController@display');

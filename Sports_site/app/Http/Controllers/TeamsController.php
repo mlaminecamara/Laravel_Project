@@ -6,11 +6,7 @@ use Illuminate\Http\Request;
 use App\Teams;
 class teamsController extends Controller
 {
-    /*public function add()
-    {
-        return view ('tbd');
-    }*/
-
+  
     function add(Request $request)
     {
         $validationData = $request->validate([
@@ -30,7 +26,12 @@ class teamsController extends Controller
         $teams->ball_possession = request('ball_possession');
         $teams->team_ranking = request('team_ranking');
         $teams->save();
-        //return view('addAnimals'); 
+        return "Team added successfully"; 
     }
-    
+
+    function display()
+    {
+        $teams = Teams::all();
+        return view('Pages.teams')->with('teams', $teams);
+    }   
 }

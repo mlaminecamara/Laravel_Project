@@ -13,6 +13,12 @@ class AdminController extends Controller
 
     public function modify_settings()
     {
-        return view('Pages/admin');
+        $checkAuth = \Auth::user()->is_admin;
+
+        if ($checkAuth == 1)
+        {
+            return view('Pages/admin');
+        }
+
     }
 }

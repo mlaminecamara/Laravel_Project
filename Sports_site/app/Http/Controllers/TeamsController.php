@@ -30,7 +30,7 @@ class teamsController extends Controller
         $teams->ball_possession = request('ball_possession');
         $teams->team_ranking = request('team_ranking');
         $teams->save();
-        return view('addAnimals'); 
+        //return view('addAnimals'); 
     }
     
 }

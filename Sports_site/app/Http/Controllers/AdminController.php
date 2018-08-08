@@ -19,6 +19,10 @@ class AdminController extends Controller
         {
             return view('Pages/admin');
         }
+        else
+        {
+            echo "You are not allowed to view this page";
+        }
 
     }
 }

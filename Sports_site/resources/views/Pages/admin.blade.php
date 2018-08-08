@@ -18,9 +18,6 @@ Ajouter une équipe
 {!! Form::label('country','country') !!}
 {!! Form::text('country') !!}
 
-{!! Form::label('flag','flag') !!}
-{!! Form::file('flag') !!}
-
 {!! Form::label('points_per_game','points_per_game') !!}
 {!! Form::number('points_per_game') !!}
 
@@ -30,9 +27,15 @@ Ajouter une équipe
 {!! Form::label('team_ranking','team_ranking') !!}
 {!! Form::number('team_ranking') !!}
 
-{!! Form::submit('submit') !!}
+{!! Form::label('flag','flag') !!}
+{!! Form::file('flag') !!}
+
+{!! Form::submit('submit') !!}  
 
 {!! Form::close() !!}
+
+
+
 
 </body>
 </html>

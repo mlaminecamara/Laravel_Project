@@ -17,6 +17,7 @@ class CreateTeamsTable extends Migration
             $table->increments('id');
             $table->string('name');
             $table->string('country');
+            $table->string('flag');
             $table->float('points_per_game');
             $table->integer('ball_possession');
             $table->integer('team_ranking');

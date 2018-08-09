@@ -4,9 +4,9 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class teams extends Model
+class Teams extends Model
 {
-    protected $fillable = [
+   protected $fillable = [
         'name', 'country', 'flag', 'points_per_game','ball possession', 'team_ranking'
     ];
 }

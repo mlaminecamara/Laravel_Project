@@ -32,6 +32,20 @@ class teamsController extends Controller
     function display()
     {
         $teams = Teams::all();
-        return view('Pages.teams')->with('teams', $teams);
-    }   
+        return view('Pages/teams')->with('teams', $teams);
+    }
+    
+    function getId($id)
+    {
+        $teams = Teams::all();  
+        dd($teams);
+        exit();
+    
+    }
+
+    function edit($id)
+    {
+
+    }
+
 }

@@ -3,9 +3,15 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Players;
 
-class Players extends Controller
+class PlayersController extends Controller
 {
+    public function index()
+    {
+        return view('Pages/add_players');
+    }
+
     function add(Request $request)
     {
         $validationData = $request->validate([
@@ -26,45 +32,41 @@ class Players extends Controller
         return "Player added successfully"; 
     }
 
-    // function display()
-    // {
-    //     $players = Players::all();
-    //     return view('Pages/teams')->with('players', $players);
-    // }
+    function display()
+    {
+        $players = Players::all();
+        return view('Pages/players')->with('players', $players);
+    }
     
-    // function getId($id)
-    // {
-    //     $teams = Teams::find($id);
-    //     return view('Pages/edit_teams',compact('teams','id')); 
-    // }
+    function getId($id)
+    {
+        $players = Players::find($id);
+        return view('Pages/edit_players',compact('players','id')); 
+    }
 
-    // function update(Request $request, $id)
-    //  {  
-    //     $teams = Teams::find($id);
-    //     $teams->name = $request->get('name');
-    //     $teams->country = $request->get('country');
-    //     $teams->flag = $request->get('flag');
-    //     $teams->points_per_game = $request->get('points_per_game');
-    //     $teams->ball_possession = $request->get('ball_possession');
-    //     $teams->team_ranking = $request->get('team_ranking');
-    //     $teams->save();
-    //     return "Team edited successfully";
-    // }
+    function update(Request $request, $id)
+     {  
+        $players = Players::find($id);
+        $players->name = $request->get('name');
+        $players->team_id = $request->get('team_id');
+        $players->points_per_game = $request->get('points_per_game');
+        $players->blocks_per_game = $request->get('blocks_per_game');
+        $players->assists_per_game = $request->get('assists_per_game');
+        $players->save();
+        return "Player edited successfully";
+    }
 
-    // function removeId($id)
-    // {
-    //     $teams = Teams::find($id);
-    //     return view('Pages/delete_teams',compact('teams','id')); 
-    // }
+    function removeId($id)
+    {
+        $players = Players::find($id);
+        return view('Pages/delete_players',compact('players','id')); 
+    }
 
-    // function delete(Request $request, $id)
-    // {    
-    //     $teams = Teams::find($id);
-    //     if(isset($id))
-    //         $teams->delete();
-    //     else
-    //         return view('page_not_found');
-            
-    //     return "Team deleted successfully";
-    // }
+    function destroy(Request $request)
+    {   
+        $players = Players::find($request->input('id'))->delete();
+              
+        return "Player deleted successfully";
+    }
+
 }

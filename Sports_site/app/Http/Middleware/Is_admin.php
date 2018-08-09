@@ -20,6 +20,6 @@ class Is_admin
         if (\Auth::user() &&  \Auth::user()->is_admin == 1) {
             return $next($request);
         }
-            return redirect('/home')->with('hello');
+            return redirect('/home');
     }
 }

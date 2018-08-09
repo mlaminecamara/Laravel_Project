@@ -31,10 +31,10 @@ Route::post('/edit_teams/{id}','TeamsController@update');
 Route::get('/delete_teams/{id}','TeamsController@removeId')->middleware('admin');
 Route::post('/delete_teams','TeamsController@destroy');
 
-Route::get('/add_players','PlayersController@index');
+Route::get('/add_players','PlayersController@index')->middleware('admin');
 Route::post('/add_players','PlayersController@add');
 Route::get('/players','PlayersController@display');
-Route::get('/edit_players/{id}','PlayersController@getId');
+Route::get('/edit_players/{id}','PlayersController@getId')->middleware('admin');
 Route::post('/edit_players/{id}','PlayersController@update');
-Route::get('/delete_pleyers/{id}','PlayersController@removeId');
-Route::post('/delete_teams/{id}','PlayersController@delete');
+Route::get('/delete_players/{id}','PlayersController@removeId')->middleware('admin');
+Route::post('/delete_players','PlayersController@destroy');

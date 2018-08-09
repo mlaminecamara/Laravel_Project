@@ -22,5 +22,5 @@ Route::get('/bet','BetController@bet');
 Route::get('/admin','AdminController@modify_settings');
 Route::post('/admin','TeamsController@add');
 Route::get('/teams','TeamsController@display');
-Route::get('/edit_teams/{id?}','TeamsController@getId');
-Route::post('/edit_teams','TeamsController@edit');
+Route::get('/edit_teams/{id}','TeamsController@getId');
+Route::post('/edit_teams/{id}','TeamsController@update');

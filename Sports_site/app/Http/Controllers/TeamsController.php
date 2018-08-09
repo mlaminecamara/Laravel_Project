@@ -37,15 +37,24 @@ class teamsController extends Controller
     
     function getId($id)
     {
-        $teams = Teams::all();  
-        dd($teams);
-        exit();
-    
+        $teams = Teams::find($id);
+        //dd($teams->name); die;
+       return view('Pages/edit_teams',compact('teams','id'));
+         
     }
 
-    function edit($id)
-    {
-
+    function update($id)
+     {
+        $teams = new Teams;
+        $teams->name = request('name');
+        $teams->country = request('country');
+        $teams->flag = request('flag');
+        $teams->points_per_game = request('points_per_game');
+        $teams->ball_possession = request('ball_possession');
+        $teams->team_ranking = request('team_ranking');
+        $teams->save();
+        return "Team edited successfully";
     }
+   
 
 }

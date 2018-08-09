@@ -13,16 +13,6 @@ class AdminController extends Controller
 
     public function modify_settings()
     {
-        $checkAuth = \Auth::user()->is_admin;
-
-        if ($checkAuth == 1)
-        {
-            return view('Pages/admin');
-        }
-        else
-        {
-            echo "You are not allowed to view this page";
-        }
-
+         return view('Pages/admin');
     }
 }

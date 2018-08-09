@@ -4,9 +4,15 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Teams;
-class teamsController extends Controller
+
+class TeamsController extends Controller
 {
-  
+    
+    public function index()
+    {
+        return view('Pages/add_teams');
+    }
+
     function add(Request $request)
     {
         $validationData = $request->validate([
@@ -46,8 +52,7 @@ class teamsController extends Controller
         $teams = Teams::find($id);
         $teams->name = $request->get('name');
         $teams->country = $request->get('country');
-        if(isset($teams->flag))
-            $teams->flag = $request->get('flag');
+        $teams->flag = $request->get('flag');
         $teams->points_per_game = $request->get('points_per_game');
         $teams->ball_possession = $request->get('ball_possession');
         $teams->team_ranking = $request->get('team_ranking');
@@ -55,8 +60,21 @@ class teamsController extends Controller
         return "Team edited successfully";
     }
 
+    function removeId($id)
+    {
+        $teams = Teams::find($id);
+        return view('Pages/delete_teams',compact('teams','id')); 
+    }
 
-    
+    function destroy(Request $request)
+    {   
+        $teams = Teams::find($request->input('id'))->delete();
+              
+        return "Team deleted successfully";
+    }
+
+
+
 
 
 

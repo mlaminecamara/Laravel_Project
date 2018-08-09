@@ -6,13 +6,9 @@
     <title>Page Title</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
-    <script src="main.js"></script>
 </head>
 <body>
-    Welcome to the admin Page
-    <ul>
-        <a href="add_teams">Add a team</a><br/>
-        <a href="teams">Show teams</a><br/>
-    </ul>
+  page not found
+{{ HTML::image('resources/assets/img/404-pipe.png', 'page not found' }}
 </body>
 </html>

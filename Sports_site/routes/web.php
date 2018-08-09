@@ -38,3 +38,11 @@ Route::get('/edit_players/{id}','PlayersController@getId')->middleware('admin');
 Route::post('/edit_players/{id}','PlayersController@update');
 Route::get('/delete_players/{id}','PlayersController@removeId')->middleware('admin');
 Route::post('/delete_players','PlayersController@destroy');
+
+Route::get('/add_games','GamesController@index')->middleware('admin');
+Route::post('/add_games','GamesController@add');
+Route::get('/games','GamesController@display');
+Route::get('/edit_games/{id}','GamesController@getId')->middleware('admin');
+Route::post('/edit_games/{id}','GamesController@update');
+Route::get('/delete_games/{id}','GamesController@removeId')->middleware('admin');
+Route::post('/delete_games','GamesController@destroy');

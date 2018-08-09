@@ -1,23 +1,29 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <meta charset="utf-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Page Title</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
-    <script src="main.js"></script>
-</head>
-<body>
+@extends('layouts.app')
+
+@section('content')
+<body background=https://images6.alphacoders.com/323/323997.jpg>    
+    <table class="table bg-light">List of teams
+    <thead>
+        <tr class="text-primary">
+        <th scope="col">Name</th>
+        <th scope="col">Country</th>
+        <th scope="col">Points Per Game</th>
+        <th scope="col">Ball Possession</th>
+        <th scope="col">Ranking</th>
+        </tr>
+    </thead>
     @foreach($teams as $fetch)
-    <ul>
-    <li>{{ $fetch-> name }}</li>
-    <li>{{ $fetch-> country }}</li>
-    <li>{{ $fetch-> flag }}</li>
-    <li>{{ $fetch-> points_per_game }}</li>
-    <li>{{ $fetch-> ball_possession }}</li>
-    <li>{{ $fetch-> team_ranking }}</li>
-    </ul>
+    <tbody>
+        <tr>
+        <th scope="row">{{ $fetch-> name }}</th>
+        <td>{{ $fetch-> country }}</td>
+        <td>{{ $fetch-> points_per_game }}</td>
+        <td>{{ $fetch-> ball_possession }}</td>
+        <td>{{ $fetch-> team_ranking }}</td>
+        </tr>
+    </tbody>
     @endforeach
+    </table>
+
 </body>
-</html>
+@endsection

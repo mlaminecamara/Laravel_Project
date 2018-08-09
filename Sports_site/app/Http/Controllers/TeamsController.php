@@ -38,23 +38,28 @@ class teamsController extends Controller
     function getId($id)
     {
         $teams = Teams::find($id);
-        //dd($teams->name); die;
-       return view('Pages/edit_teams',compact('teams','id'));
-         
+        return view('Pages/edit_teams',compact('teams','id')); 
     }
 
-    function update($id)
-     {
-        $teams = new Teams;
-        $teams->name = request('name');
-        $teams->country = request('country');
-        $teams->flag = request('flag');
-        $teams->points_per_game = request('points_per_game');
-        $teams->ball_possession = request('ball_possession');
-        $teams->team_ranking = request('team_ranking');
+    function update(Request $request, $id)
+     {  
+        $teams = Teams::find($id);
+        $teams->name = $request->get('name');
+        $teams->country = $request->get('country');
+        if(isset($teams->flag))
+            $teams->flag = $request->get('flag');
+        $teams->points_per_game = $request->get('points_per_game');
+        $teams->ball_possession = $request->get('ball_possession');
+        $teams->team_ranking = $request->get('team_ranking');
         $teams->save();
         return "Team edited successfully";
     }
+
+
+    
+
+
+
    
 
 }

@@ -3,12 +3,13 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 use App\Players;
 
 class PlayersController extends Controller
 {
     public function index()
-    {
+    {   
         return view('Pages/add_players');
     }
 
@@ -33,9 +34,15 @@ class PlayersController extends Controller
     }
 
     function display()
-    {
-        $players = Players::all();
-        return view('Pages/players')->with('players', $players);
+    {   
+
+        //$players = Players::all();
+
+        $players = DB::table('teams')
+        ->join('players','teams.id', '=','players.team_id')
+        ->select('players.name as nom', 'teams.name', 'players.points_per_game as points', 'players.blocks_per_game', 'players.assists_per_game', 'players.id')
+        ->get();
+        return view('Pages/players', compact('players'));
     }
     
     function getId($id)

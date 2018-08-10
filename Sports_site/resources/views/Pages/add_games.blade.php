@@ -7,16 +7,16 @@
     <title>Document</title>
 </head>
 <body>
-    
+   
 Ajouter un match
 
 {!! Form::open(['action' => 'GamesController@add']) !!}
 
-{!! Form::label('team1','team1') !!}
-{!! Form::text('team1') !!}
+{!! Form::label('team1','choose team1') !!}
+{!! Form::select('team1', $select) !!}
 
-{!! Form::label('team2','team2') !!}
-{!! Form::text('team2') !!}
+{!! Form::label('team2','choose team2') !!}
+{!! Form::select('team2', $select) !!}
 
 {!! Form::label('score','score') !!}
 {!! Form::text('score') !!}

@@ -9,9 +9,9 @@
 <body>
 @foreach($players as $fetch)
     <ul>
+    <li>{{ $fetch-> nom }}</li>
     <li>{{ $fetch-> name }}</li>
-    <li>{{ $fetch-> team_id }}</li>
-    <li>{{ $fetch-> points_per_game }}</li>
+    <li>{{ $fetch-> points }}</li>
     <li>{{ $fetch-> blocks_per_game }}</li>
     <li>{{ $fetch-> assists_per_game }}</li>
     </ul>

@@ -2,14 +2,22 @@
 
 namespace App\Http\Controllers;
 
+use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
 use App\Games;
+use App\Teams;
 
 class GamesController extends Controller
 {
     public function index()
-    {
-        return view('Pages/add_games');
+    {   
+        $teams = DB::table('teams')->get();
+        $select = [];
+        foreach($teams as $team)
+        {
+            $select[$team->name] = $team->name;
+        }
+        return view('Pages/add_games', compact('select'));
     }
 
     function add(Request $request)
@@ -25,7 +33,7 @@ class GamesController extends Controller
         ]);
         $games = new Games;
         $games->team1 = request('team1');
-        $games->team2= request('team2');
+        $games->team2= request( 'team2');
         $games->score = request('score');
         $games->winner = request('winner');
         $games->game_location = request('game_location');

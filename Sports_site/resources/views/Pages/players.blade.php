@@ -6,7 +6,7 @@
     <thead>
         <tr class="text-primary">
         <th scope="col">Name</th>
-        <th scope="col">Team ID</th>
+        <th scope="col">Team</th>
         <th scope="col">Points Per Game</th>
         <th scope="col">Blocks Per Game</th>
         <th scope="col">Assists Per Game</th>

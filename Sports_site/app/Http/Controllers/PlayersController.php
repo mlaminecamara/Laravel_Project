@@ -36,8 +36,6 @@ class PlayersController extends Controller
     function display()
     {   
 
-        //$players = Players::all();
-
         $players = DB::table('teams')
         ->join('players','teams.id', '=','players.team_id')
         ->select('players.name as nom', 'teams.name', 'players.points_per_game as points', 'players.blocks_per_game', 'players.assists_per_game', 'players.id')

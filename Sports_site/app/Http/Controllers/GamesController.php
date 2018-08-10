@@ -46,6 +46,7 @@ class GamesController extends Controller
     function display()
     {
         $games = Games::all();
+        //dd($games);
         return view('Pages/games')->with('games', $games);
     }
     

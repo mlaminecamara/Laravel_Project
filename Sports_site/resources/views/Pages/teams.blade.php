@@ -18,6 +18,10 @@
         </th>
         <th scope="col">Ranking
         </th>
+        @if(Auth::user() &&  Auth::user()->is_admin == 1)
+        <th scope="col">Edit team</th>
+        <th scope="col">Delete team</th>
+        @endif  
         </tr>
     </thead>
     @foreach($teams as $fetch)
@@ -29,6 +33,14 @@
         <td>{{ $fetch-> points_per_game }}</td>
         <td>{{ $fetch-> ball_possession }}</td>
         <td>{{ $fetch-> team_ranking }}</td>
+        @if(Auth::user() &&  Auth::user()->is_admin == 1)
+        <td>
+        <a href="{{action('TeamsController@getId', $fetch->id)}}"> <button>Edit</button> </a>
+        </td>
+        <td>
+        <a href="{{action('TeamsController@removeId', $fetch->id)}}"> <button>Delete</button></a>
+        </td>
+        @endif
         </tr>
     </tbody>
     @endforeach

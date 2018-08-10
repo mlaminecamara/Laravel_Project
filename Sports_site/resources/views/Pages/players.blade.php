@@ -11,16 +11,28 @@
         <th scope="col">Points Per Game</th>
         <th scope="col">Blocks Per Game</th>
         <th scope="col">Assists Per Game</th>
+        @if(Auth::user() &&  Auth::user()->is_admin == 1)
+        <th scope="col">Edit player</th>
+        <th scope="col">Delete player</th>
+        @endif  
         </tr>
     </thead>
-    @foreach($players as $fetch)
+    @foreach($players as $player)
     <tbody>
         <tr>
-        <th scope="row">{{ $fetch-> nom }}</th>
-        <td>{{ $fetch-> name }}</td>
-        <td>{{ $fetch-> points }}</td>
-        <td>{{ $fetch-> blocks_per_game }}</td>
-        <td>{{ $fetch-> assists_per_game }}</td>
+        <th scope="row">{{$player-> nom }}</th>
+        <td>{{ $player-> name }}</td>
+        <td>{{ $player-> points }}</td>
+        <td>{{ $player-> blocks_per_game }}</td>
+        <td>{{ $player-> assists_per_game }}</td>
+        @if(Auth::user() &&  Auth::user()->is_admin == 1)
+        <td>
+        <a href="{{action('PlayersController@getId', $player->id)}}"> <button>Edit</button> </a>
+        </td>
+        <td>
+        <a href="{{action('PlayersController@removeId', $player->id)}}"> <button>Delete</button></a>
+        </td>
+        @endif
         </tr>
     </tbody>
     @endforeach

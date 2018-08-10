@@ -8,6 +8,8 @@
         <tr class="text-primary">
         <th scope="col">Name
         </th>
+        <th scope="col">Logo
+        </th>
         <th scope="col">Country
         </th>
         <th scope="col">Points Per Game
@@ -22,6 +24,7 @@
     <tbody>
         <tr>
         <th scope="row">{{ $fetch-> name }}</th>
+        <td><img src="{{ $fetch-> flag }}"></img></td>
         <td>{{ $fetch-> country }}</td>
         <td>{{ $fetch-> points_per_game }}</td>
         <td>{{ $fetch-> ball_possession }}</td>

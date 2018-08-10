@@ -38,8 +38,8 @@
                 <a class="navbar-brand" href="{{ url('/players') }}">
                 Players
                 </a>
-                <a class="navbar-brand" href="{{ url('/matches') }}">
-                Matches
+                <a class="navbar-brand" href="{{ url('/games') }}">
+                Games
                 </a>
                 <a class="navbar-brand" href="{{ url('/admin') }}">
                 Admin

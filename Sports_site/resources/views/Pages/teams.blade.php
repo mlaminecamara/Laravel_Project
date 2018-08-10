@@ -2,7 +2,8 @@
 
 @section('content')
 <body background=https://images6.alphacoders.com/323/323997.jpg>    
-    <table class="bg-light table-striped table-bordered table-sm" cellspacing="0" width="100%">List of teams
+    <table class="bg-light table-striped table-bordered table-sm" cellspacing="0" width="100%">
+    <p class="text-light text-center">LIST OF TEAMS</p>
     <thead>
         <tr class="text-primary">
         <th scope="col">Name

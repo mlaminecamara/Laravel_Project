@@ -1,20 +1,29 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
-</head>
-<body>
-@foreach($players as $fetch)
-    <ul>
-    <li>{{ $fetch-> nom }}</li>
-    <li>{{ $fetch-> name }}</li>
-    <li>{{ $fetch-> points }}</li>
-    <li>{{ $fetch-> blocks_per_game }}</li>
-    <li>{{ $fetch-> assists_per_game }}</li>
-    </ul>
+@extends('layouts.app')
+
+@section('content')
+<body background=https://images6.alphacoders.com/323/323997.jpg>    
+    <table class="bg-light table-striped table-bordered table-sm" cellspacing="0" width="100%">List of Players
+    <thead>
+        <tr class="text-primary">
+        <th scope="col">Name</th>
+        <th scope="col">Team ID</th>
+        <th scope="col">Points Per Game</th>
+        <th scope="col">Blocks Per Game</th>
+        <th scope="col">Assists Per Game</th>
+        </tr>
+    </thead>
+    @foreach($players as $fetch)
+    <tbody>
+        <tr>
+        <th scope="row">{{ $fetch-> nom }}</th>
+        <td>{{ $fetch-> name }}</td>
+        <td>{{ $fetch-> points }}</td>
+        <td>{{ $fetch-> blocks_per_game }}</td>
+        <td>{{ $fetch-> assists_per_game }}</td>
+        </tr>
+    </tbody>
     @endforeach
+    </table>
+
 </body>
-</html>
+@endsection

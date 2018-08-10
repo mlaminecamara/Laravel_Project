@@ -2,14 +2,19 @@
 
 @section('content')
 <body background=https://images6.alphacoders.com/323/323997.jpg>    
-    <table class="table bg-light">List of teams
+    <table class="bg-light table-striped table-bordered table-sm" cellspacing="0" width="100%">List of teams
     <thead>
         <tr class="text-primary">
-        <th scope="col">Name</th>
-        <th scope="col">Country</th>
-        <th scope="col">Points Per Game</th>
-        <th scope="col">Ball Possession</th>
-        <th scope="col">Ranking</th>
+        <th scope="col">Name
+        </th>
+        <th scope="col">Country
+        </th>
+        <th scope="col">Points Per Game
+        </th>
+        <th scope="col">Ball Possession
+        </th>
+        <th scope="col">Ranking
+        </th>
         </tr>
     </thead>
     @foreach($teams as $fetch)
@@ -23,7 +28,8 @@
         </tr>
     </tbody>
     @endforeach
-    </table>
+</table>
 
 </body>
+
 @endsection

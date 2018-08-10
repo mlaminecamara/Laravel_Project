@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Teams;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Http\File;
+use Illuminate\Support\Facades\Storage;
 
 class TeamsController extends Controller
 {
@@ -28,7 +30,9 @@ class TeamsController extends Controller
         $teams = new Teams;
         $teams->name = request('name');
         $teams->country = request('country');
-        $teams->flag = $request->file('flag')->storeAs('logos', $request->teams()->country);
+        $teams->flag = "logos/" .  $request->file('flag')->getClientOriginalName();
+        $request->file('flag')->move('logos/', $request->file('flag')->getClientOriginalName());
+        //$teams->flag = $request->file('flag')->store('logos'); marche po
         $teams->points_per_game = request('points_per_game');
         $teams->ball_possession = request('ball_possession');
         $teams->team_ranking = request('team_ranking');

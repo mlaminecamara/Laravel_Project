@@ -10,8 +10,8 @@
     
 Ajouter une équipe
 
-{!! Form::open(['action' => 'TeamsController@add']) !!}
-
+{!! Form::open(['action' => 'TeamsController@add', 'method' => 'post', 'files' => true]) !!}
+{{ csrf_field() }}
 {!! Form::label('name','name') !!}
 {!! Form::text('name') !!}
 
@@ -28,7 +28,7 @@ Ajouter une équipe
 {!! Form::number('team_ranking') !!}
 
 {!! Form::label('flag','flag') !!}
-{!! Form::file('flag') !!}
+{!! Form::file('flag',null) !!}
 
 {!! Form::submit('submit') !!}  
 

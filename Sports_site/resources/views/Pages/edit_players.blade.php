@@ -11,7 +11,7 @@
 Editer un joueur
 
 {!! Form::open(['action' => ['PlayersController@update',$players->id]]) !!}
-
+{{ csrf_field() }}
 {!! Form::label('name','name') !!}
 {!! Form::text('name', $players->name) !!}
 

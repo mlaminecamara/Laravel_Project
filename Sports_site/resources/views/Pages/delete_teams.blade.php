@@ -11,7 +11,7 @@
 Supprimer une équipe
 
 {!! Form::open(['action' => ['TeamsController@destroy']]) !!}
-
+{{ csrf_field() }}
 {!! Form::hidden('id', $teams->id) !!}
 
 {!! Form::label('name','name') !!}

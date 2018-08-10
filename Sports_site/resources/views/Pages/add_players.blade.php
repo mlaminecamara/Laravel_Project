@@ -11,7 +11,7 @@
 Ajouter un joueur
 
 {!! Form::open(['action' => 'PlayersController@add']) !!}
-
+{{ csrf_field() }}
 {!! Form::label('name','name') !!}
 {!! Form::text('name') !!}
 

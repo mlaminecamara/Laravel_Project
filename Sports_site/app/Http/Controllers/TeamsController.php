@@ -37,7 +37,7 @@ class TeamsController extends Controller
         $teams->ball_possession = request('ball_possession');
         $teams->team_ranking = request('team_ranking');
         $teams->save();
-        return "Team added successfully"; 
+        return view('layouts/success');
     }
 
     function display()
@@ -62,7 +62,7 @@ class TeamsController extends Controller
         $teams->ball_possession = $request->get('ball_possession');
         $teams->team_ranking = $request->get('team_ranking');
         $teams->save();
-        return "Team edited successfully";
+        return view('layouts/success');
     }
 
     function removeId($id)
@@ -75,7 +75,7 @@ class TeamsController extends Controller
     {   
         $teams = Teams::find($request->input('id'))->delete();
               
-        return "Team deleted successfully";
+        return view('layouts/success');
     }
 
 

@@ -40,7 +40,7 @@ class GamesController extends Controller
         $games->game_time = request('game_time');
         $games->number_of_fouls = request('number_of_fouls');
         $games->save();
-        return "Game successfully added"; 
+        return view('layouts/success');
     }
 
     function display()
@@ -67,7 +67,7 @@ class GamesController extends Controller
         $games->game_time = $request->get('game_time');
         $games->number_of_fouls = $request->get('number_of_fouls');
         $games->save();
-        return "Game edited successfully";
+        return view('layouts/success');
     }
 
     function removeId($id)
@@ -80,6 +80,6 @@ class GamesController extends Controller
     {   
         $games = Games::find($request->input('id'))->delete();
               
-        return "Game deleted successfully";
+        return view('layouts/success');
     }
 }

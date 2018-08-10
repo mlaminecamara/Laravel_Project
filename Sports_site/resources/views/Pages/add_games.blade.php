@@ -11,7 +11,7 @@
 Ajouter un match
 
 {!! Form::open(['action' => 'GamesController@add']) !!}
-
+{{ csrf_field() }}
 {!! Form::label('team1','choose team1') !!}
 {!! Form::select('team1', $select) !!}
 

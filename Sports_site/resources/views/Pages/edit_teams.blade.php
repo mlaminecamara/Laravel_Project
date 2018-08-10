@@ -11,7 +11,7 @@
 Editer une équipe
 
 {!! Form::open(['action' => ['TeamsController@update',$teams->id]]) !!}
-
+{{ csrf_field() }}
 {!! Form::label('name','name') !!}
 {!! Form::text('name', $teams->name) !!}
 

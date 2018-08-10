@@ -30,7 +30,7 @@ class PlayersController extends Controller
         $players->blocks_per_game = request('blocks_per_game');
         $players->assists_per_game = request('assists_per_game');
         $players->save();
-        return "Player added successfully"; 
+        return view('layouts/success');
     }
 
     function display()
@@ -58,7 +58,7 @@ class PlayersController extends Controller
         $players->blocks_per_game = $request->get('blocks_per_game');
         $players->assists_per_game = $request->get('assists_per_game');
         $players->save();
-        return "Player edited successfully";
+        return view('layouts/success');
     }
 
     function removeId($id)
@@ -71,7 +71,7 @@ class PlayersController extends Controller
     {   
         $players = Players::find($request->input('id'))->delete();
               
-        return "Player deleted successfully";
+        return view('layouts/success');
     }
 
 }

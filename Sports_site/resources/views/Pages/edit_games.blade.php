@@ -11,7 +11,7 @@
 Editer un match
 
 {!! Form::open(['action' => ['GamesController@update',$games->id]]) !!}
-
+{{ csrf_field() }}
 {!! Form::label('team1','team1') !!}
 {!! Form::text('team1', $games->team1) !!}
 

@@ -11,7 +11,7 @@
 Supprimer un match
 
 {!! Form::open(['action' => ['GamesController@destroy']]) !!}
-
+{{ csrf_field() }}
 {!! Form::hidden('id', $games->id) !!}
 
 {!! Form::label('team1','team1') !!}

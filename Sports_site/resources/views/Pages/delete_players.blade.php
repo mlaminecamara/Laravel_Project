@@ -11,7 +11,7 @@
 Supprimer un joueur
 
 {!! Form::open(['action' => ['PlayersController@destroy']]) !!}
-
+{{ csrf_field() }}
 {!! Form::hidden('id', $players->id) !!}
 
 {!! Form::label('name','name') !!}

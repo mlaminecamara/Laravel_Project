@@ -11,7 +11,7 @@
           <div class="col-lg-6 order-lg-2">
             <div class="p-5">
               <a href="{{ url('/teams') }}">
-              <img class="img-fluid rounded-circle"  src="../public/team.jpg" alt="">
+              <img class="img-fluid rounded-circle" src="../team.jpg" alt="test">
               </a>              
             </div>
           </div>
@@ -32,7 +32,7 @@
           <div class="col-lg-6">
             <div class="p-5">
             <a href="{{ url('/players') }}">
-              <img href=""class="img-fluid rounded-circle" src="../public/player.jpg" alt="">
+              <img href=""class="img-fluid rounded-circle" src="../player.jpg" alt="">
               </a>
             </div>
           </div>
@@ -53,7 +53,7 @@
           <div class="col-lg-6 order-lg-2">
             <div class="p-5">
             <a href="{{ url('/games') }}">
-              <img class="img-fluid rounded-circle" src="../public/nba_court.jpg" alt="">
+              <img class="img-fluid rounded-circle" src="../nba_court.jpg" alt="">
               </a>
             </div>
           </div>

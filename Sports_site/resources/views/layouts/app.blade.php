@@ -46,6 +46,10 @@
                 <a class="navbar-brand" href="{{ url('/games') }}">
                 Games
                 </a>
+                </a>
+                <a class="navbar-brand" href="{{ url('/bet') }}">
+                Bet
+                </a>
                 @if(Auth::user() &&  Auth::user()->is_admin == 1)
                 <a class="navbar-brand" href="{{ url('/admin') }}">
                 Admin
